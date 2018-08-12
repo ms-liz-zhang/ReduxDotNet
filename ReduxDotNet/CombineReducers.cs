@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ReduxDotNet
 {
-    public class CombineReducers<TState, TAction> where TState : IKeyState<String> where TAction : IAction
+    public class CombineReducers<TState, TAction> : IReducer<TState, TAction> where TState : IKeyState<String> where TAction : IAction
     {
         private List<IReducer<IState, TAction>> _reducers;
 
@@ -14,7 +14,7 @@ namespace ReduxDotNet
             _reducers = new List<IReducer<IState, TAction>>(reducers);
         }
 
-        public TState NewReducer(TState state, TAction action)
+        public TState Reduce(TState state, TAction action)
         {
             var nextState = state.ShallowCopy();
 
