@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace ReduxExample
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var initialState = new State<int>();
-            var store = new Store<int, ExampleAction>(initialState, new ExampleReducer());
+            var initialState = new ExampleState<int>();
+            var store = new Store<ExampleState<int>, ExampleAction>(initialState, new ExampleReducer());
 
             store.Subscribe((state) =>
             {

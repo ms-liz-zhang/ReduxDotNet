@@ -4,8 +4,7 @@ using System.Text;
 
 namespace ReduxDotNet.Interfaces
 {
-    public interface IState<T>
+    public interface IState
     {
-        T Value { get; set; }
     }
 }

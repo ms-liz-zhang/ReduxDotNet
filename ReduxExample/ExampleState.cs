@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
-{ 
-    public class ExampleAction : IAction
+namespace ReduxExample
+{
+    public class ExampleState<T> : IState
     {
-        public string Type { get; set; }
-        public int Data { get; set; }
+       public T Value { get; set; }
     }
 }

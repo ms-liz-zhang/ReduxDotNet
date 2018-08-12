@@ -4,10 +4,10 @@ using System.Text;
 
 namespace ReduxDotNet.Interfaces
 {
-    interface IStore<T, TAction> where TAction : IAction
+    interface IStore<TState, TAction> where TState : IState where TAction : IAction
     {
-        void Subscribe(Action<IState<T>> listener);
-        void Unsubscribe(Action<IState<T>> listener);
+        void Subscribe(Action<TState> listener);
+        void Unsubscribe(Action<TState> listener);
         void Dispatch(TAction action);
     }
 }

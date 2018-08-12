@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{48E9477B-9427-4A0D-88A5-1D5618A5EB0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReduxDotNet", "ReduxDotNet\ReduxDotNet.csproj", "{B5367DDF-F19C-473C-BDC8-A06F955A162A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReduxDotNet", "ReduxDotNet\ReduxDotNet.csproj", "{B5367DDF-F19C-473C-BDC8-A06F955A162A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReduxExample", "ConsoleApp1\ReduxExample.csproj", "{3C2AC27D-F014-4861-A120-17942484FBD9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReduxExample", "ReduxExample\ReduxExample.csproj", "{3C2AC27D-F014-4861-A120-17942484FBD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

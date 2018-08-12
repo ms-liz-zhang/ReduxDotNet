@@ -2,13 +2,13 @@
 using ReduxDotNet.Interfaces;
 using System;
 
-namespace ConsoleApp1
+namespace ReduxExample
 {
-    public class ExampleReducer : IReducer<int, ExampleAction>
+    public class ExampleReducer : BaseReducer<ExampleState<int>, ExampleAction>
     {
-        public IState<int> Reduce(IState<int> state, ExampleAction action)
+        public override ExampleState<int> Reduce(ExampleState<int> state, ExampleAction action)
         {
-            var nextState = new State<int>();
+            var nextState = new ExampleState<int>();
             nextState.Value = state.Value;
 
             switch(action.Type)

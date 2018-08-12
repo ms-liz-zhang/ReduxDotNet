@@ -4,8 +4,8 @@ using System.Text;
 
 namespace ReduxDotNet.Interfaces
 {
-    public interface IReducer<T, TAction> where TAction : IAction
+    public interface IReducer<TState, TAction> where TState : IState where TAction : IAction
     {
-        IState<T> Reduce(IState<T> state, TAction action);
+        TState Reduce(TState state, TAction action);
     }
 }

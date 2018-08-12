@@ -4,25 +4,25 @@ using System.Collections.Generic;
 
 namespace ReduxDotNet
 {
-    public class Store<T, TAction> : IStore<T, TAction> where TAction : IAction
+    public class Store<TState, TAction> : IStore<TState, TAction> where TState : IState where TAction : IAction
     {
-        private IState<T> _state;
-        private List<Action<IState<T>>> _listeners;
-        private IReducer<T, TAction> _reducer;
+        private TState _state;
+        private List<Action<TState>> _listeners;
+        private IReducer<TState, TAction> _reducer;
 
-        public Store(IState<T> initialState, IReducer<T, TAction> reducer)
+        public Store(TState initialState, IReducer<TState, TAction> reducer)
         {
-            _listeners = new List<Action<IState<T>>>();
+            _listeners = new List<Action<TState>>();
             _state = initialState;
             _reducer = reducer;
         }
         
-        public void Subscribe(Action<IState<T>> listener)
+        public void Subscribe(Action<TState> listener)
         {
             _listeners.Add(listener);
         }
 
-        public void Unsubscribe(Action<IState<T>> listener)
+        public void Unsubscribe(Action<TState> listener)
         {
             _listeners.Remove(listener);
         }
